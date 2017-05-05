@@ -7,7 +7,7 @@ $fileLocation = "$textfile";
 $fh = fopen($fileLocation, 'w') or die("Error opening file!");
 
 $stringToWrite = "$onoffdata";
-fwrite($fh,$strongToWrite);
+fwrite($fh,$stringToWrite);
 
 fclose($fh);
 
