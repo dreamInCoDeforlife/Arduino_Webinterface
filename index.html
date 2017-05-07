@@ -43,9 +43,7 @@ li a:hover:not(.active) {
   border-radius: 15px;
   box-shadow: 0 9px #999;
 }
-
 .button:hover {background-color: #3e8e41}
-
 .button:active {
   background-color: #3e8e41;
   box-shadow: 0 5px #666;
@@ -68,17 +66,27 @@ li a:hover:not(.active) {
 <div style="padding:20px;margin-top:30px;height:1500px;">
 <p align="center"> 	<!--Used to center text in middle of monitor screen-->
 <font size="8">		<!--Sets the tex font size to 8 -->
-<iframe width="560" height="315" src="https://www.youtube.com/embed/lyEnnXVE32o" frameborder="0" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/a0Zr7d1nY-c" frameborder="0" allowfullscreen></iframe>
+
+</br>
+
+<script>
+function setState(state) {
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("GET", "led.php?state="+state, true);
+        xhttp.send();
+    } 
+</script>
+
+<button type="button" class="button" onclick="setState(1)">LED ON</button>
+
 </br>
 </br>
 
-<button class="button"><b><a href="led.php?state=1">LED ON</a></button>
-</button>
-</br>
-</br>
-<!-- Sends a request to the website php file to write "0" to the LED_data.txt file-->
-<button class="button"><b><a href="led.php?state=0">LED OFF</a></b> </button>
- 
+<button type="button" class="button" onclick="setState(0)">LED OFF</button>
+
+
 </font>
 </p>
 
