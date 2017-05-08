@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -67,7 +66,7 @@ li a:hover:not(.active) {
 <p align="center"> 	<!--Used to center text in middle of monitor screen-->
 <font size="8">		<!--Sets the tex font size to 8 -->
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/a0Zr7d1nY-c" frameborder="0" allowfullscreen></iframe>
+<iframe src="https://appear.in/led_control" width="800" height="640" frameborder="0"></iframe>
 
 </br>
 
@@ -77,14 +76,46 @@ function setState(state) {
         xhttp.open("GET", "led.php?state="+state, true);
         xhttp.send();
     } 
+
+function onKeyDown()
+{
+    // Detect which key was pressed
+    if( key == 'w' ){
+        setState(1);
+    }
+    // Repeat for each key you care about...
+   else if (key == 's'){
+    	setState(2);
+    }
+    else if (key == 'a'){
+    	setState(3);
+    }
+    else if (key == 'd'){
+    	setState(4);
+    }
+    else{
+        setState(0);
+    }
+
+
+}
+
+
 </script>
+//<body onload="onKeyDown()">
 
-<button type="button" class="button" onclick="setState(1)">LED ON</button>
+
+<button type="button" class="button" onclick="setState(1)">UP</button>
 
 </br>
-</br>
 
-<button type="button" class="button" onclick="setState(0)">LED OFF</button>
+<button type="button" class="button" onclick="setState(9)">LEFT</button>
+<button type="button" class="button" onclick="setState(0)">DOWN</button>
+<button type="button" class="button" onclick="setState(4)">RIGHT</button>
+
+
+
+
 
 
 </font>
