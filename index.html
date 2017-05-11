@@ -73,46 +73,51 @@ li a:hover:not(.active) {
 <script>
 function setState(state) {
         var xhttp = new XMLHttpRequest();
-        xhttp.open("GET", "led.php?state="+state, true);
+        xhttp.open("GET", "led.php?state=" + state, true);
         xhttp.send();
+        
     } 
 
-function onKeyDown()
+function mouseDown(key)
 {
     // Detect which key was pressed
-    if( key == 'w' ){
+    if( key == '1' ){
         setState(1);
+        
     }
     // Repeat for each key you care about...
-   else if (key == 's'){
+   else if (key == '2'){
     	setState(2);
+        
     }
-    else if (key == 'a'){
+    else if (key == '3'){
     	setState(3);
     }
-    else if (key == 'd'){
+    else if (key == '4'){
     	setState(4);
     }
-    else{
-        setState(0);
-    }
-  setState(0);
-
-
+    
 }
 
-
+function mouseUp(){
+    setState(9);
+}
+    
+  
 </script>
 
 
 
-<button type="button" class="button" onclick="setState(1)">UP</button>
+<button type="button" class = "button" onmousedown="mouseDown(1)" onmouseup="mouseUp()">UP</button>
 
 </br>
 
-<button type="button" class="button" onclick="setState(3)">LEFT</button>
-<button type="button" class="button" onclick="setState(2)">DOWN</button>
-<button type="button" class="button" onclick="setState(4)">RIGHT</button>
+<button type="button" class="button" onmousedown="mouseDown(3)" onmouseup="mouseUp()">LEFT</button>
+<button type="button" class="button" onmousedown="mouseDown(2)" onmouseup="mouseUp()">DOWN</button>
+<button type="button" class="button" onmousedown="mouseDown(4)" onmouseup="mouseUp()">RIGHT</button>
+</br>
+<button type="button" class="button" onmousedown="mouseDown(5)" onmouseup="mouseUp()">CLAW OPEN</button>
+<button type="button" class="button" onmousedown="mouseDown(6)" onmouseup="mouseUp()">CLAW CLOSE</button>
 
 
 
