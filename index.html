@@ -77,7 +77,6 @@ function setState(state) {
         xhttp.send();
         
     } 
-
 function mouseDown(key)
 {
     // Detect which key was pressed
@@ -96,9 +95,15 @@ function mouseDown(key)
     else if (key == '4'){
     	setState(4);
     }
+    else if (key == '5'){
+    	setState(5);
+    }else if (key == '6'){
+    	setState(6);
+    }
+    else{
+        setState(9);
     
 }
-
 function mouseUp(){
     setState(9);
 }
