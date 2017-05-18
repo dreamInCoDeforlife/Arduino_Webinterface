@@ -66,7 +66,7 @@ li a:hover:not(.active) {
 <p align="center"> 	<!--Used to center text in middle of monitor screen-->
 <font size="8">		<!--Sets the tex font size to 8 -->
 
-<iframe src="https://appear.in/led_control" width="800" height="640" frameborder="0"></iframe>
+<iframe src="https://appear.in/led_control" width="400" height="400" frameborder="0"></iframe>
 
 </br>
 
@@ -99,11 +99,9 @@ function mouseDown(key)
     	setState(5);
     }else if (key == '6'){
     	setState(6);
+    }else if(key=='7'){
+        setState();
     }
-    else{
-        setState(9);
-    }
-    
 }
 function mouseUp(){
     setState(9);
@@ -124,7 +122,7 @@ function mouseUp(){
 </br>
 <button type="button" class="button" onmousedown="mouseDown(5)" onmouseup="mouseUp()">CLAW OPEN</button>
 <button type="button" class="button" onmousedown="mouseDown(6)" onmouseup="mouseUp()">CLAW CLOSE</button>
-
+<button type="button" class="button" onmousedown="mouseDown(7)" onmouseup="mouseUp()">CRASH</button>
 
 
 
