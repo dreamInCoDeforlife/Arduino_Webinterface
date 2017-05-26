@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Remotely Illuminate an LED</title>
+  <script type="text/javascript" src="processing.js"></script>
   <?php include "led.php"; ?>
 <style>
 body {margin:0;}
@@ -123,8 +124,8 @@ function mouseUp(){
 <button type="button" class="button" onmousedown="mouseDown(5)" onmouseup="mouseUp()">CLAW OPEN</button>
 <button type="button" class="button" onmousedown="mouseDown(6)" onmouseup="mouseUp()">CLAW CLOSE</button>
 <button type="button" class="button" onmousedown="mouseDown(7)" onmouseup="mouseUp()">CRASH</button>
-
-
+  </br>
+<canvas id="theCanvas" data-processing-sources="myProgram.pde"></canvas>
 
 
 
