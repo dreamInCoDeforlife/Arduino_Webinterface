@@ -32,12 +32,18 @@ public boolean isServerAlive()
 void draw(){
   if (isServerAlive()) {
     String onoffdata[] = loadStrings("http://wossrobotics.ca/LED_data.txt");
+    text("WORKING",10,100);
     String a1d5[] = new String[1];
     if (onoffdata == null){
        a1d5[0] = "9";
     }
     else{
-      a1d5[0] = onoffdata[0];
+      if (onoffdata.length != 0){
+        a1d5[0] = onoffdata[0];
+      }else{
+        a1d5[0] = "9";
+      }
+        
     }
     
      //print("\n\n\n\n\n\n\n\n\n\n" + onoffdata.length + "\n\n\n\n\n\n\n\n\n\n");
@@ -69,7 +75,7 @@ void draw(){
         port1.write('9');
       }
   }else{
-    println("pop a hoyyyyyaaaa");
+    text("POP A HOYA",10,100);
   }
   
 }
