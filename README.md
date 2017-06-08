@@ -1,4 +1,4 @@
-#Arduino Web interface
+# Arduino Web interface
  
 Information
  
@@ -10,7 +10,7 @@ If you are a first time user click on this link : https://appear.in/LED_Control
  
 Make sure to block your webcam!
 
-#Development Notes 
+# Development Notes 
  
 Anyone in the HDSB district school board can join this project for further developments!
  
