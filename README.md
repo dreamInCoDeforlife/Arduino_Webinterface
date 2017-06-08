@@ -1,12 +1,22 @@
-# Arduino_Webinterface
-
-
+#Arduino Web interface
+ 
+Information
+ 
 In this project, an application is created where a robot arm is controlled online at a remote location. 
-
+ 
 To visit the website go to www.wossrobotics.ca/armcontrol.html .
-
-if you are a first time user click on this link : https://appear.in/LED_Control
-
+ 
+If you are a first time user click on this link : https://appear.in/LED_Control
+ 
 Make sure to block your webcam!
+
+#Development Notes 
+ 
+Anyone in the HDSB district school board can join this project for further developments!
+ 
+Quick Pointers
+- Our website has already been built which is available for viewing at wossrobotics.ca/armcontrol.html .
+- Other projects such as the robot hand are currently in production and will be launched at the discretion of White Oaks Secondary School Computer Engineering Department. 
+
 
 
