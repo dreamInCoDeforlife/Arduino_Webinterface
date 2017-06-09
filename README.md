@@ -18,5 +18,5 @@ Quick Pointers
 - Our website has already been built which is available for viewing at wossrobotics.ca/armcontrol.html .
 - Other projects such as the robot hand are currently in production and will be launched at the discretion of White Oaks Secondary School Computer Engineering Department. 
 
-
+![Screenshot](cake.png)
 
