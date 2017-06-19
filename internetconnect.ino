@@ -56,6 +56,6 @@ void draw() {
     }
   } 
   else {
-    println("smoke weed");
+    println("Not working");
   }
 }
