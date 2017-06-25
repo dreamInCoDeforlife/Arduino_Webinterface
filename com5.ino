@@ -1,5 +1,6 @@
 /*
- * Communicate Up, Down, Left, Right motion for the Robot Arm.
+ * Communicate Up, Down, Left, Right motion for the Robot Arm. Processing IDE sends commands to the arduinos using serial port. 
+ * Make sure the processing code is installed before using this arduino program
  * @Author : Aman Adhav
  * June 1st 2017
  */
