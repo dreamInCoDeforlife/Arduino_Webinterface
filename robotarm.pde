@@ -1,20 +1,29 @@
+/*
+ * Recieve instructions for robot control through website. 
+ * http://wossrobotics.ca/LED_data.txt
+ * To make this code work internet connection is needed
+ * @Author : Aman Adhav
+ * June 1st 2017
+ */
+
 import processing.serial.*;
 import java.net.InetAddress;
-Serial port;  // The serial port
+// initialize arduino ports
+Serial port;
 Serial port1;
 
 void setup () { 
   //size(600, 600);  // set up the window to whatever size you want
   println(Serial.list());  // List all the available serial ports
-  String portName = "COM3";
-  String portName1 = "COM4";
-  port = new Serial(this, portName, 9600);
+  String portName = "COM5"; // Change these port names as need according to the port list
+  String portName1 = "COM7"; // Change these port names as need according to the port list
+  
+  // Define baud rate for the ports and make sure in the beginning they are clear
+  port = new Serial(this, portName, 9600); 
   port1 = new Serial(this, portName1, 9600);
   port.clear();
   port1.clear();
   
-  //background(255);    // set inital background
-  //smooth();  // turn on antialiasing
 }
 public boolean isServerAlive()
   // To check if server is reachable
@@ -22,7 +31,7 @@ public boolean isServerAlive()
   
   try {
     
-    InetAddress.getByName("wossrobotics.ca").isReachable(3000); //Replace with your name
+    InetAddress.getByName("wossrobotics.ca").isReachable(3000); //this checks if the website is reachable with 3000 as maximum ping
     return true;
   } 
   catch (Exception e) {
@@ -30,23 +39,25 @@ public boolean isServerAlive()
   }
 }
 void draw(){
+
+  // If the website is active
   if (isServerAlive()) {
-    String onoffdata[] = loadStrings("http://wossrobotics.ca/LED_data.txt");
-    text("WORKING",10,100);
+    String onoffdata[] = loadStrings("http://wossrobotics.ca/LED_data.txt"); //load the character (instruction from the website)
+    text("WORKING",10,100); // display if the website is reachable
     String a1d5[] = new String[1];
-    if (onoffdata == null){
-       a1d5[0] = "9";
+    if (onoffdata == null){ //if there is a glitch or the website is unreachable at that instant
+       a1d5[0] = "9"; //change the character in the string to "9"
     }
     else{
-      if (onoffdata.length != 0){
-        a1d5[0] = onoffdata[0];
+      if (onoffdata.length != 0){ // if it is reachable
+        a1d5[0] = onoffdata[0]; // get the value from first value from onoffdata[] 
       }else{
-        a1d5[0] = "9";
+        a1d5[0] = "9"; // else make the value "9" (this is added to further filter the results because for some odd reason the wifi used to crash immediately crashing the program)
       }
         
     }
     
-     //print("\n\n\n\n\n\n\n\n\n\n" + onoffdata.length + "\n\n\n\n\n\n\n\n\n\n");
+     // this part of the code sends serial data to the arduino values from 1-9 are recieved in this processing sketch and sent to the arduino serial ports
      if (a1d5[0].equals("1")==true){
         println(" - UP");
         port.write('U');
