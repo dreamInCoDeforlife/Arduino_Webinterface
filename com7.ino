@@ -1,34 +1,43 @@
+/*
+ * Communicate CLAW OPEN, CLAW CLOSE motion for the Robot Arm. Processing IDE sends commands to the arduinos using serial port. 
+ * Make sure the processing code is installed before using this arduino program
+ * @Author : Aman Adhav
+ * June 1st 2017
+ */
+
+//define clock wise and counter clock wise motion
 #define CW  0
 #define CCW 1
 
 // Motor definitions to make life easier:
 #define MOTOR_A 1
 #define MOTOR_B 1
-int incomingByte;
+int incomingByte; //value that is incoming through the serial port
 const byte PWMA = 3;  // PWM control (speed) for motor A
 const byte PWMB = 11; // PWM control (speed) for motor B
 const byte DIRA = 12; // Direction control for motor A
 const byte DIRB = 13; // Direction control for motor B
-//#include <Wire.h>
+
 
 void setup()
 {
   Serial.begin(9600);
-  //Wire.begin(8);                // join i2c bus with address #8
+  
   setupArdumoto(); // Set all pins as outputs
   
 }
 
+
 void loop()
 {
-    
+   //check if there are any value in serial port(serial port is how you communicate with the arduino)  
   if (Serial.available()){
-    incomingByte = Serial.read();
-    if (incomingByte == 'B'){
+    incomingByte = Serial.read(); // read the incoming byte from the serial port
+    if (incomingByte == 'B'){ // if incoming byte from the serial port is 'B' (CLAW OPEN) then drive motor clock wise 125 (analog write value) for 10ms
       driveArdumoto(MOTOR_B, CW, 125);
       delay(100);
       stopArdumoto(MOTOR_B);
-    }else if (incomingByte == 'C'){
+    }else if (incomingByte == 'C'){ // if incoming byte from the serial port is 'C' (CLAW CLOSE) then drive motor counter clock wise 125 (analog write value) for 10ms
       
       driveArdumoto(MOTOR_B, CCW, 125);
       delay(100);
