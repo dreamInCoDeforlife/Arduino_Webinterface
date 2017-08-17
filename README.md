@@ -1,6 +1,8 @@
 # Arduino Web interface
  
 Information
+
+**This project is the property of the Halton District School board and White Oaks Secondary School. Please give credit if you ever use this code for personal development. 
  
 In this project, an application is created where a robot arm is controlled online at a remote location. 
  
